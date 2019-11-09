@@ -1,0 +1,9 @@
+---
+- name: copy files to target hosts
+  hosts: all
+  tasks: 
+    - name: Copy files
+      copy:   
+#        src: /home/osboxes/ansible-ws/test-copy.text
+        src: test-copy.text
+        dest: /tmp
