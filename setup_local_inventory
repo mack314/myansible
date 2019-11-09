@@ -1,0 +1,24 @@
+create ansible-ws directory in your home directory
+
+mkdir ansible-ws
+cd ansible-ws
+
+create a inventory file there with name myinventory
+
+vi myinventory
+
+create your hostgroup & list localhost to work on your localhost using ansible as below in myinventory file
+
+[myhost]
+localhost
+
+Run the following command to verify your setup and it should run the nslookup on your localhost
+
+ansible myhost -i myinventory -m shell -a "nslookup localhost" --ask-pass
+
+
+[ Note - Process to do passwordless ssh to remote hosts ]
+Pre-requisite - make sure openssh is installed on ansible control host
+Run the following commands :
+1. sshkeygen - to genetate private & public keys in ~/.ssh directory
+2. ssh-copy-id -i ~/.ssh/id_rsa.pub user@remotehost1  - To copy public key on to remote hosts
