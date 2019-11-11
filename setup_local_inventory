@@ -12,9 +12,11 @@ create your hostgroup & list localhost to work on your localhost using ansible a
 [myhost]
 localhost
 
-Run the following command to verify your setup and it should run the nslookup on your localhost
+Verify Ansible setup 
+=====================
+Run the following command to verify your setup 
 
-ansible myhost -i myinventory -m shell -a "nslookup localhost" --ask-pass
+ansible myhost -i myinventory -m ping --ask-pass
 
 
 [ Note - Process to do passwordless ssh to remote hosts ]
