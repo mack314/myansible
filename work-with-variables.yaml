@@ -1,0 +1,22 @@
+---
+- name : Play to display name
+  hosts: myhost
+  vars:                       # Declare Play level Variables 
+    firstname: manmohan
+    lastname: mittal 
+  tasks: 
+    - name: print my name 
+      debug:
+        msg: "my name is {{firstname}} {{lastname}}"
+
+    - name: print list of names 
+      vars:                   # Tasks level variables 
+        names:
+        - name: manmohan 
+        - name: mukesh
+      debug: 
+        msg: "{{ item.name }}"
+      with_items: "{{ names }}"
+
+
+
