@@ -1,0 +1,6 @@
+---
+# tasks file for printmyname
+- name: print my name 
+  debug:
+    msg: "my name is {{firstname}} {{lastname}}" 
+   
